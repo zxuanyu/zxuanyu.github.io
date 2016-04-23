@@ -4,7 +4,7 @@
 
 # Site
 title: XuanYu&&CChang
-subtitle: on the road together
+subtitle: 
 description: Lose Yourself
 author: zxuanyu
 language: zh-CN
@@ -63,8 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
-
+theme: yilia
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
