@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>画匠问题 | XuanYu&amp;&amp;CChang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="画匠问题
+每个画匠只能画连在一起的部分；给出花匠人数以及每一个小作业所需的时间；求出最少工作时间
+
+
+空间优化后的动态规划算法
+四边形不等式优化后的算法
+最优算法
+
+
+一、空间优化后的动态规划算法1、算法细节1)、dp[i][j]代表i个花匠搞定arr[0…j]这些画所需的时间；可以得到：dp[i][j]=min{max{dp[i-1][k],sum[k+1…j] } (i-1&amp;lt;=k&amp;lt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="画匠问题">
+<meta property="og:url" content="http://yoursite.com/2016/04/23/画匠问题/index.html">
+<meta property="og:site_name" content="XuanYu&&CChang">
+<meta property="og:description" content="画匠问题
+每个画匠只能画连在一起的部分；给出花匠人数以及每一个小作业所需的时间；求出最少工作时间
+
+
+空间优化后的动态规划算法
+四边形不等式优化后的算法
+最优算法
+
+
+一、空间优化后的动态规划算法1、算法细节1)、dp[i][j]代表i个花匠搞定arr[0…j]这些画所需的时间；可以得到：dp[i][j]=min{max{dp[i-1][k],sum[k+1…j] } (i-1&amp;lt;=k&amp;lt;">
+<meta property="og:updated_time" content="2016-04-24T09:20:43.276Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="画匠问题">
+<meta name="twitter:description" content="画匠问题
+每个画匠只能画连在一起的部分；给出花匠人数以及每一个小作业所需的时间；求出最少工作时间
+
+
+空间优化后的动态规划算法
+四边形不等式优化后的算法
+最优算法
+
+
+一、空间优化后的动态规划算法1、算法细节1)、dp[i][j]代表i个花匠搞定arr[0…j]这些画所需的时间；可以得到：dp[i][j]=min{max{dp[i-1][k],sum[k+1…j] } (i-1&amp;lt;=k&amp;lt;">
+  
+    <link rel="alternative" href="/atom.xml" title="XuanYu&amp;&amp;CChang" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/assets/images/favicon/xy.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/assets/images/avatar/z.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">XuanYu</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/tags/技术">技术</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/zxuanyu" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">XuanYu</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/assets/images/avatar/z.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">XuanYu</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/tags/技术">技术</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/zxuanyu" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-画匠问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/23/画匠问题/" class="article-date">
+  	<time datetime="2016-04-23T09:17:20.000Z" itemprop="datePublished">2016-04-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      画匠问题
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态规划/">动态规划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="画匠问题"><a href="#画匠问题" class="headerlink" title="画匠问题"></a>画匠问题</h1><blockquote>
+<p>每个画匠只能画连在一起的部分；给出花匠人数以及每一个小作业所需的时间；求出最少工作时间</p>
+</blockquote>
+<ul>
+<li><strong>空间优化后的动态规划算法</strong></li>
+<li><strong>四边形不等式优化后的算法</strong></li>
+<li><strong>最优算法</strong></li>
+</ul>
+<hr>
+<h2 id="一、空间优化后的动态规划算法"><a href="#一、空间优化后的动态规划算法" class="headerlink" title="一、空间优化后的动态规划算法"></a>一、空间优化后的动态规划算法</h2><h3 id="1、算法细节"><a href="#1、算法细节" class="headerlink" title="1、算法细节"></a>1、算法细节</h3><p>1)、dp[i][j]代表i个花匠搞定arr[0…j]这些画所需的时间；可以得到：<strong>dp[i][j]=min{max{dp[i-1][k],sum[k+1…j] } (i-1&lt;=k&lt;j) } </strong>;其中dp[i][j]依赖于dp[i-1][…]的值；所以我们使用一维数组节省空间，map[j]代表此时有[0…j]幅画需要完成时的dp[i][j]值；这个数组被不断的覆盖，直到运算到花匠人数达到要求时，得到的map[arr.length-1]为最后结果。<br>2）map[j]（0&lt;=j&lt;arr.length）初始赋值的含义是当只有1个画匠时，需要有j幅画完成，所需的最少时间为map[j];</p>
+<a id="more"></a>
+<h3 id="2-代码："><a href="#2-代码：" class="headerlink" title="2.代码："></a>2.代码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solution1</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> arrLength, <span class="keyword">int</span> painterNum)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(arrLength&lt;=<span class="number">0</span>||painterNum&lt;=<span class="number">0</span>)</span><br><span class="line">		return <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> * sum = new <span class="keyword">int</span>[arrLength];</span><br><span class="line">	<span class="keyword">int</span>* <span class="built_in">map</span> = new <span class="keyword">int</span>[arrLength];</span><br><span class="line">	sum[<span class="number">0</span>] = arr[<span class="number">0</span>];</span><br><span class="line">	<span class="built_in">map</span>[<span class="number">0</span>] = arr[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arrLength; i++)&#123;</span><br><span class="line">		sum[i] = sum[i - <span class="number">1</span>] + arr[i];</span><br><span class="line">		<span class="built_in">map</span>[i] = arr[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arrLength; i++)&#123;</span><br><span class="line">		<span class="comment">//画的个数要大于等于画匠人数；j&gt;=i;对于大于画的人数正常计算；取i=arrLength时的map[arrLength]就是时间最小值；</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = arrLength - <span class="number">1</span>; j &gt;= i; j--)&#123;</span><br><span class="line">			<span class="keyword">int</span> min = INT_MAX;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> k = i - <span class="number">1</span>; k &lt; j; k++)&#123;</span><br><span class="line">				<span class="keyword">int</span> cur = max(map[k], sum[j] - sum[k]);</span><br><span class="line">				min = min(min, cur);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">map</span>[j] = min;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return <span class="built_in">map</span>[arrLength - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<font color="red">算法的时间复杂度为：O(num*N^2),画匠的数目为num</font>
+
+<h2 id="二、四边形不等式优化后的算法"><a href="#二、四边形不等式优化后的算法" class="headerlink" title="二、四边形不等式优化后的算法"></a>二、四边形不等式优化后的算法</h2><h3 id="1、算法细节-1"><a href="#1、算法细节-1" class="headerlink" title="1、算法细节"></a>1、算法细节</h3><p>1）、与丢棋子问题相似，可以使用四边形不等式来优化算法；如果求解dp[i][j]可以从dp[i-1][j]和dp[i][j+1]中得到的最佳值获取计算范围；<br>2）、dp[i-1][j]代表i-1个画匠中，最后一个花匠画的画为[l…j]；dp[i][j+1]代表i个画匠中，最后一个画匠画的范围为[m…j+1];那么i个画匠，有j幅画，最后一个画匠画的数k,一定大于等于l，且小于等于m；<br>3）、分析出i从0开始增长；j从arr.length-1开始减小；在最里层求最佳值k值的循环中，从map中获取[l,m]值；</p>
+<h3 id="2-代码：-1"><a href="#2-代码：-1" class="headerlink" title="2.代码："></a>2.代码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//用来记录最佳分割位置：cands[j]代表有j幅画时，对应的i值（这里使用一维的cands，所以会覆盖数据，动态规划的空间优化）的最后一个画匠的工作范围是cands[j]到j；</span></span><br><span class="line"><span class="comment">//且初始化为0；因为当只有一个画匠时，最后一个画匠画的范围是cands[j]=0到j;</span></span><br><span class="line">	<span class="keyword">int</span> * cands = new <span class="keyword">int</span>[arrLength];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arrLength; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = arrLength - <span class="number">1</span>; j &gt;= i; j--)<span class="comment">//画的个数要大于等于画匠人数；对于大于画的人数正常计算；取i=arrLength时的map[arrLength]就是时间最小值；</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> min = INT_MAX;</span><br><span class="line">			<span class="keyword">int</span> minpos = cands[j];</span><br><span class="line">			<span class="keyword">int</span> maxpos = j == arrLength - <span class="number">1</span> ? arrLength : cands[j + <span class="number">1</span>];</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> k = minpos; k &lt;=maxpos; k++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">int</span> cur = max(map[k], sum[j] - sum[k]);</span><br><span class="line">				<span class="keyword">if</span> (cur &lt; min)</span><br><span class="line">				&#123;</span><br><span class="line">					cands[j] = k;</span><br><span class="line">					min = cur;</span><br><span class="line">				&#125;	</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">map</span>[j] = min;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return <span class="built_in">map</span>[arrLength - <span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+<font color="red">算法的时间复杂度为：O(N^2)</font>
+
+
+<h2 id="三、最优算法"><a href="#三、最优算法" class="headerlink" title="三、最优算法"></a>三、最优算法</h2><h3 id="1、算法细节-2"><a href="#1、算法细节-2" class="headerlink" title="1、算法细节"></a>1、算法细节</h3><p>1）、我们的问题是求出最少的工作时间；我们可以换个角度，求如何分配每个人的工作时间，来使得画匠人数正正好好；我们使用二分查找方法逐渐确定每个人所分得的最少工作时间；最开始是从[0,sum[arr.length]]中的中点（为mid值）分配工作，如果所需的画匠数小于给出的画匠人数，那么进一步二分查找，要调整最大值（为mid，此时的工作时间）,使得每个人分得的工作时间更小；如果所需的画匠数大于给出的画匠人数，需要减少人数，从而每个人工作的时间加长，那么二分查找要调整最小值（为mid，此时的工作时间）;直到所需的人数正好等于要求的人数；<br>2）、论证不存在有两个不同的工作时间，要求的工作人数是相同的；<br>3）、函数getNeedNum;要求每个人的工作时间，求需要的人数；如果某个值arr[i]大于工作时间，那么次工作时间不符合要求，需要上调，此时返回一个很大的值给原函数，进行判断，从而进行上调；</p>
+<h3 id="2-代码：-2"><a href="#2-代码：-2" class="headerlink" title="2.代码："></a>2.代码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> max_f(x,y) x&gt;=y? x:y</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getNeedNum</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> arrLength, <span class="keyword">int</span> lim)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> stepSum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arrLength; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span> (arr[i]&gt;lim)</span><br><span class="line">			return INT_MAX;</span><br><span class="line">		stepSum += arr[i];</span><br><span class="line">		<span class="keyword">if</span> (stepSum &gt; lim)&#123;</span><br><span class="line">			res++;</span><br><span class="line">			stepSum = arr[i];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	return res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solution2</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> arrLength, <span class="keyword">int</span> painterNum)</span></span><br><span class="line"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> * sum = new <span class="keyword">int</span>[arrLength];</span><br><span class="line">	<span class="keyword">int</span>* <span class="built_in">map</span> = new <span class="keyword">int</span>[arrLength];</span><br><span class="line">	sum[<span class="number">0</span>] = arr[<span class="number">0</span>];</span><br><span class="line">	<span class="built_in">map</span>[<span class="number">0</span>] = arr[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arrLength; i++)&#123;</span><br><span class="line">		sum[i] = sum[i - <span class="number">1</span>] + arr[i];</span><br><span class="line">		<span class="built_in">map</span>[i] = arr[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//判断：如果画匠数大于等于作业的个数，取最大的作业为结果返回；</span></span><br><span class="line">	<span class="keyword">if</span> (painterNum &gt;= arrLength)&#123;</span><br><span class="line">		<span class="keyword">int</span> max = INT_MIN;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arrLength; i++)&#123;</span><br><span class="line">			max = max_f(max, arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		return max;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> minSum(<span class="number">0</span>);</span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">maxSum</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arrLength; i++)&#123;</span><br><span class="line">			maxSum += arr[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (minSum != maxSum - <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> mid = (minSum + maxSum) / <span class="number">2</span>;</span><br><span class="line">			<span class="comment">//如果getNeedNum得到的值正好是要求的画匠的人数，那么进行下调，尝试更少的工作时间；其实是  </span></span><br><span class="line">			<span class="comment">//不存在两个不同的工作时间所用的人数是相同的，这里下调的意义是多运行几步直到循环终止（maxSum==minSum+1）</span></span><br><span class="line">			<span class="keyword">if</span> (getNeedNum(arr, arrLength, mid) &gt; painterNum)&#123;</span><br><span class="line">				minSum = mid;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				maxSum = mid;</span><br><span class="line">		&#125;</span><br><span class="line">		return maxSum;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> arr[<span class="number">6</span>] = &#123; <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span> &#125;;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; solution2(arr, <span class="number">6</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	getchar();</span><br><span class="line">	return <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<font color="red">算法的时间复杂度为：O(NlogS),S为arr累加值：maxSum的初始值；N是getNeedNum方法的时间复杂度</font>
+
+<p><code>换行：用Sublime:两个空格+一个回车</code></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/22/丢棋子问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">丢棋子问题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="画匠问题" data-title="画匠问题" data-url="http://yoursite.com/2016/04/23/画匠问题/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"zxuanyu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 XuanYu
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
